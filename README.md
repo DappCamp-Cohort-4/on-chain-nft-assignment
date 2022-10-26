@@ -38,7 +38,7 @@ A base contract is given here - `contracts/DappCampNFT.sol`. Use this contract t
 
 ## Deployment
 
-- Rename `.env.example` to `.env`. Replace `<<Your ALCHEMY_API_KEY>>` with your alchemy API key and `<<Your WALLET_PRIVATE_KEY>>` with your wallet's private key
+- Rename `example.env` to `.env`. Replace `<<Your ALCHEMY_API_KEY>>` with your alchemy API key and `<<Your WALLET_PRIVATE_KEY>>` with your wallet's private key
 
 - The deploy script is already provided for you. Run the following command to deploy to test network
 
@@ -51,6 +51,8 @@ A base contract is given here - `contracts/DappCampNFT.sol`. Use this contract t
     ```
     https://testnets.opensea.io/assets/goerli/CONTRACT_ADDRESS/TOKEN_ID
     ```
+
+- In `hardhat.config.js` change line 9 from `const NETWORK = LOCAL_NETWORK;` to `const NETWORK = TEST_NETWORK;`
 
 - Once deployed you can mint your tokens by substituting the deployed contract address in `scripts/mint.js` and running the following command
 
