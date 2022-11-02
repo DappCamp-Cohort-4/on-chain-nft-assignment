@@ -22,7 +22,7 @@ A base contract is given here - `src/DappCampNFT.sol`. Use this contract to crea
 
     `{"name": "Color #1", "description": "Bring colors to life.", "image": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1lZXQiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iYmx1ZSIgLz48L3N2Zz4="}`
 
-  - The `image` field of the json above is a base64 encoded SVG prefixed with `data:image/svg+xml;base64,`. On decoding the base64 SVG you get
+  - The `image` field of the json above is a base64 encoded SVG prefixed with `data:image/svg+xml;base64,`. On decoding the base64 SVG you get:
 
     `<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100"><rect width="100" height="100" fill="blue" /></svg>`
 
@@ -30,17 +30,13 @@ A base contract is given here - `src/DappCampNFT.sol`. Use this contract to crea
 
 ## Evaluation
 
-- Clone this repo. Use the flag `--recurse-submodules` to clone the repo along with the submodules. You can use the following command after replacing the `CLONE_URL` with the clone url of your repo
+- Clone this repo. Use the flag `--recurse-submodules` to clone the repo along with the submodules. You can use the following command after replacing the `CLONE_URL` with the clone: url of your repo
 
   ```
   git clone --recurse-submodules CLONE_URL
   ```
 
-- Install `forge-std` library using the below command
-  ```
-  forge install foundry-rs/forge-std --no-commit
-  ```
-- Create a new branch with your name. You can use the following command
+- Create a new branch with your name. You can use the following command:
 
   ```
   git checkout -b my-name
@@ -84,4 +80,4 @@ source .env && forge script script/DappCampNFT.s.sol:DeployScript --broadcast --
 
 ## Note
 
-- To understand this concept of on-chain NFTs better take a look `DeveloperDAO` contract [here](https://github.com/Developer-DAO/developer-dao-nft-contract/blob/master/hh/contracts/Dev.sol)
+- To understand the concept of on-chain NFTs better take a look `DeveloperDAO` contract [here](https://github.com/Developer-DAO/developer-dao-nft-contract/blob/master/hh/contracts/Dev.sol)

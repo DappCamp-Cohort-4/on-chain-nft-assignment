@@ -8,12 +8,6 @@ import "../src/DappCampNFT.sol";
 contract DappCampNFTTest is Test {
     DappCampNFT public dappcampNFT;
 
-    bytes internal constant TABLE_DECODE =
-        hex"0000000000000000000000000000000000000000000000000000000000000000"
-        hex"00000000000000000000003e0000003f3435363738393a3b3c3d000000000000"
-        hex"00000102030405060708090a0b0c0d0e0f101112131415161718190000000000"
-        hex"001a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132330000000000";
-
     struct NFT {
         string description;
         string image;
@@ -43,18 +37,12 @@ contract DappCampNFTTest is Test {
         string memory tokenURI = dappcampNFT.tokenURI(1);
         uint256 tokenURILen = bytes(tokenURI).length;
 
-        // Removing "data:application/json;base64" from tokenURI
         string memory metadataJson = substring(tokenURI, 29, tokenURILen);
 
         bytes memory base64DecodedJSON = Base64Lib.Base64.decode(metadataJson);
         string memory jsonString = string(base64DecodedJSON);
         bytes memory parsedJSON = vm.parseJson(jsonString);
 
-        console.log("jsonString: ", jsonString);
-
-        NFT memory nft = abi.decode(parsedJSON, (NFT));
-        console.log("nft.name: ", nft.name);
-        console.log("nft.description: ", nft.description);
-        console.log("nft.image: ", nft.image);
+        abi.decode(parsedJSON, (NFT));
     }
 }
