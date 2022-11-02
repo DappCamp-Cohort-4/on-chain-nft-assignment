@@ -50,11 +50,6 @@ contract DappCampNFTTest is Test {
         string memory jsonString = string(base64DecodedJSON);
         bytes memory parsedJSON = vm.parseJson(jsonString);
 
-        console.log("jsonString: ", jsonString);
-
-        NFT memory nft = abi.decode(parsedJSON, (NFT));
-        console.log("nft.name: ", nft.name);
-        console.log("nft.description: ", nft.description);
-        console.log("nft.image: ", nft.image);
+        abi.decode(parsedJSON, (NFT));
     }
 }
