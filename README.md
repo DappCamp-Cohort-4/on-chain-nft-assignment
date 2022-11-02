@@ -30,10 +30,14 @@ A base contract is given here - `src/DappCampNFT.sol`. Use this contract to crea
 
 ## Evaluation
 
-- Clone this repo. Use the flag `--recurse-submodules` to clone the repo along with the submodules. You can use the following command after replacing the `CLONE_URL` with the clone: url of your repo
+- Clone this repo
+  ```
+  git clone CLONE_URL
+  ```
+- Install the submodules
 
   ```
-  git clone --recurse-submodules CLONE_URL
+  forge install foundry-rs/forge-std openzeppelin/openzeppelin-contracts Brechtpd/base64 --no-commit
   ```
 
 - Create a new branch with your name. You can use the following command:
@@ -62,17 +66,17 @@ Follow these steps to deploy to your desired network:
 
 - Run the following command to deploy
 
-```bash
-forge script script/DappCampNFT.s.sol:DeployScript --broadcast
-```
+  ```bash
+  forge script script/DappCampNFT.s.sol:DeployScript --broadcast
+  ```
 
 - Alternatively, to also verify the contract on etherscan, you can run the following command
 
-```
-source .env && forge script script/DappCampNFT.s.sol:DeployScript --broadcast --etherscan-api-key $ETHERSCAN_KEY --verify
-```
+  ```
+  source .env && forge script script/DappCampNFT.s.sol:DeployScript --broadcast --etherscan-api-key $ETHERSCAN_KEY --verify
+  ```
 
-- Once deployed to rinkeby, you can view your NFT collection on OpenSea. If you deployed on the Goerli testnet, you can substitue your `CONTRACT_ADDRESS` and `TOKEN_ID` in the below URL to view the NFT on OpenSea.
+- Once deployed, you can view your NFT collection on OpenSea. If you deployed on the Goerli testnet, you can substitue your `CONTRACT_ADDRESS` and `TOKEN_ID` in the below URL to view the NFT on OpenSea.
 
   ```
   https://testnets.opensea.io/assets/CONTRACT_ADDR/TOKEN_ID
